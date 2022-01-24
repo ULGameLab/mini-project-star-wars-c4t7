@@ -379,7 +379,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1001 &825187734
+--- !u!1001 &1218206888
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -390,21 +390,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: FPS Franklin
       objectReference: {fileID: 0}
+    - target: {fileID: 4742659712009798174, guid: fea5f67e76e2c2d4a821214292c30bd2, type: 3}
+      propertyPath: speed
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4742659712009798175, guid: fea5f67e76e2c2d4a821214292c30bd2, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4742659712009798175, guid: fea5f67e76e2c2d4a821214292c30bd2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.35
+      value: 5.491879
       objectReference: {fileID: 0}
     - target: {fileID: 4742659712009798175, guid: fea5f67e76e2c2d4a821214292c30bd2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.2
+      value: 1.38
       objectReference: {fileID: 0}
     - target: {fileID: 4742659712009798175, guid: fea5f67e76e2c2d4a821214292c30bd2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.05
+      value: 5.5546837
       objectReference: {fileID: 0}
     - target: {fileID: 4742659712009798175, guid: fea5f67e76e2c2d4a821214292c30bd2, type: 3}
       propertyPath: m_LocalRotation.w
