@@ -396,7 +396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4742659712009798174, guid: fea5f67e76e2c2d4a821214292c30bd2, type: 3}
       propertyPath: DashTime
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4742659712009798174, guid: fea5f67e76e2c2d4a821214292c30bd2, type: 3}
       propertyPath: DashSpeed
@@ -408,7 +408,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4742659712009798174, guid: fea5f67e76e2c2d4a821214292c30bd2, type: 3}
       propertyPath: DashRecharge
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4742659712009798175, guid: fea5f67e76e2c2d4a821214292c30bd2, type: 3}
       propertyPath: m_RootOrder
@@ -453,6 +453,10 @@ PrefabInstance:
     - target: {fileID: 4742659712009798175, guid: fea5f67e76e2c2d4a821214292c30bd2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742659712398629028, guid: fea5f67e76e2c2d4a821214292c30bd2, type: 3}
+      propertyPath: Wait
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fea5f67e76e2c2d4a821214292c30bd2, type: 3}

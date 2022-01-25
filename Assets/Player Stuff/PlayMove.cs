@@ -17,7 +17,7 @@ public class PlayMove : MonoBehaviour
 
     public float DashSpeed;
     public float DashTime;
-    public float DashRecharge;
+    public float DashRecharge = 1f;
     float dashTime;
 
     public Transform body;
@@ -31,7 +31,7 @@ public class PlayMove : MonoBehaviour
     void Start()
     {
         Ospeed = speed;
-        dashTime = DashTime / 10f;
+        dashTime = DashTime; /// 10f;
         //DashReady = true;
     }
 
@@ -70,7 +70,7 @@ public class PlayMove : MonoBehaviour
         }
 
         //Dash
-        if (DashReady && Input.GetKey(KeyCode.LeftShift))
+        if (DashReady ==true && Input.GetKey(KeyCode.LeftShift))
         {
             StartCoroutine(Dash());
             StartCoroutine(DashReadying());
@@ -113,16 +113,9 @@ public class PlayMove : MonoBehaviour
 
     IEnumerator DashReadying()
     {
+        //DashReady = false;
         yield return new WaitForSeconds(DashRecharge);
         DashReady = true;
-
-        /*
-        while (RepulseTimer != 1)
-        {
-            RepulseTimer += .01f;
-            yield return new WaitForSeconds(.01f);
-        }
-        */
     }
 
     public bool GetDashReady()
