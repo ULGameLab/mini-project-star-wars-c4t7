@@ -23,7 +23,7 @@ public class PlayMove : MonoBehaviour
     public Transform body;
     bool onGround;
     bool isCrouched = false;
-    bool DashReady = true;
+    bool DashReady;
 
     Vector3 movement;
 
@@ -31,8 +31,9 @@ public class PlayMove : MonoBehaviour
     void Start()
     {
         Ospeed = speed;
-        dashTime = DashTime; /// 10f;
-        //DashReady = true;
+        dashTime = DashTime/10f; /// 10f;
+        DashReady = true;
+        DashSpeed = 2 * Ospeed;
     }
 
     // Update is called once per frame
@@ -70,7 +71,7 @@ public class PlayMove : MonoBehaviour
         }
 
         //Dash
-        if (DashReady ==true && Input.GetKey(KeyCode.LeftShift))
+        if (DashReady && Input.GetKey(KeyCode.LeftShift))
         {
             StartCoroutine(Dash());
             StartCoroutine(DashReadying());

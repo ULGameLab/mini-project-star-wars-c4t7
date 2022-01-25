@@ -392,15 +392,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4742659712009798174, guid: fea5f67e76e2c2d4a821214292c30bd2, type: 3}
       propertyPath: speed
-      value: 16
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4742659712009798174, guid: fea5f67e76e2c2d4a821214292c30bd2, type: 3}
       propertyPath: DashTime
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4742659712009798174, guid: fea5f67e76e2c2d4a821214292c30bd2, type: 3}
       propertyPath: DashSpeed
-      value: 2
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 4742659712009798174, guid: fea5f67e76e2c2d4a821214292c30bd2, type: 3}
       propertyPath: m_Enabled
@@ -408,7 +408,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4742659712009798174, guid: fea5f67e76e2c2d4a821214292c30bd2, type: 3}
       propertyPath: DashRecharge
-      value: 4
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4742659712009798175, guid: fea5f67e76e2c2d4a821214292c30bd2, type: 3}
       propertyPath: m_RootOrder
