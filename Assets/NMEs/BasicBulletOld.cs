@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//just toss this onto the bullet model directly
 public class BasicBulletOld : MonoBehaviour
 {
     GameObject Bullet;
@@ -36,7 +37,7 @@ public class BasicBulletOld : MonoBehaviour
         DMG = GS.FiredD * GS.GridMultD * (BRb.velocity.magnitude * .45f) * (GS.FiredM * Mathf.Pow(GS.GridMultS, 3));//scale damage based off of the bullet's grid multiplyers, speed, and mass in that order.
         if (collision.collider.tag == "Enemy")
         {
-            HealthBar HB = collision.gameObject.GetComponent<HealthBar>();
+            HeathBar HB = collision.gameObject.GetComponent<HeathBar>();
             if (HB != null) { HB.TakeDamage(DMG); }
         }
     }

@@ -84,7 +84,7 @@ public class HeathBar : MonoBehaviour
         {
             if (persisBody)
             {
-                Destroy(SelfObj.GetComponent<HealthBar>());
+                Destroy(SelfObj.GetComponent<HeathBar>());
                 Destroy(CanObj);
             }
             else
