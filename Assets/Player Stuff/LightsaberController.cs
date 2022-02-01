@@ -6,7 +6,6 @@ public class LightsaberController : MonoBehaviour
 {
 
     float Damage;
-    GameObject BRb;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +22,7 @@ public class LightsaberController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         
-        float DMG = (BRb.velocity.magnitude * Damage);//scale damage based off of the bullet's speed.
+        float DMG = Damage;//scale damage based off of the bullet's speed.
         if (collision.collider.tag == "Enemy" || collision.collider.tag == "Player")
         {
             HeathBar HB = collision.gameObject.GetComponent<HeathBar>();
