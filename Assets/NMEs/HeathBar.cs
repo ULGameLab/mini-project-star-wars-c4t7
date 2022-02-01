@@ -5,8 +5,8 @@ using UnityEngine.UI;
 /*
 use case for this script
 [enemies]
-EmptyObject   (this is the enemy holder that is used in csripts that move the enemy, has a rigidbody on it.layer and tag set to enemy)
-  model       (this is the model of the enemy, has a collider on it. layer and tag set to enemy. script goes here)
+EmptyObject   (this is the enemy holder that is used in csripts that move the enemy, has a rigidbody on it.layer and tag set to enemy. script goes here)
+  model       (this is the model of the enemy, has a collider on it. layer and tag set to enemy)
   EmptyObject (this holds the canvas so the healthbar stays above the enemy at all times)
     canvas    (this is the what will hold the healthbar itself.layer and tag left unset)
       slider  (this a UI object that goes onto the canvas and will be used as the healthbar.layer and tag left unset)
@@ -20,9 +20,12 @@ EmptyObject   (this is the enemy holder that is used in csripts that move the en
 
 [objects with health]
 model         (this is the model of the object, has a collider and rigidbody on it)
-EmptyObject   (this holds the canvas so the healthbar stays above the object at all times)
-  canvas      (this is the what will hold the healthbar itself)
-    slider    (this a UI object that goes onto the canvas and will be used as the healthbar)
+  EmptyObject (this holds the canvas so the healthbar stays above the object at all times)
+    canvas    (this is the what will hold the healthbar itself)
+      slider  (this a UI object that goes onto the canvas and will be used as the healthbar)
+
+to have the object you gavea  healthbar take damage, just get a reference to this script form the object, and call the TakeDamage(DMG) method, with DMG=the damage you want it to take.
+-DMG counts as healing, and casehandling for overhealing is handled.
 */
 public class HeathBar : MonoBehaviour
 {
