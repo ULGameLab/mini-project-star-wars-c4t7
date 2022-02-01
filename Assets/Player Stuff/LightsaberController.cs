@@ -22,14 +22,14 @@ public class LightsaberController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        /**
+        
         float DMG = (BRb.velocity.magnitude * Damage);//scale damage based off of the bullet's speed.
         if (collision.collider.tag == "Enemy" || collision.collider.tag == "Player")
         {
-            HealthBar HB = collision.gameObject.GetComponent<HealthBar>();
+            HeathBar HB = collision.gameObject.GetComponent<HeathBar>();
             if (HB != null) { HB.TakeDamage(DMG); }
         }
-        **/
+        
     }
 
 }
