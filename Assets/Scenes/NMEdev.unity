@@ -894,7 +894,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 836943453}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.57, y: 1.92, z: 0}
+  m_LocalPosition: {x: 0.67, y: 3.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -917,8 +917,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurState: 0
   Plyr: {fileID: 1406125063}
+  SPD: 3.5
   VisRng: 175
   VisDist: 25
+  isBoba: 1
 --- !u!195 &836943458
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1663,7 +1665,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2287fc2b1cc7a2247b3c6331b9a57921, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

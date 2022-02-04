@@ -29,6 +29,9 @@ public class NMEStateMachine : MonoBehaviour
     private Dictionary<State, System.Action> execute;
 
     float temp;
+    [Tooltip("default speed for navmeshes is 3.5")]
+    public float SPD;
+
     //Idle variables
     bool isIdle;
     Vector3 IPos;
@@ -40,10 +43,11 @@ public class NMEStateMachine : MonoBehaviour
     [Tooltip("distance to see luke, probably 25")]
     public float VisDist;
 
+    bool KillOnce;
     Vector3 KPos;
-
+    
     //bobaGoWeeInDaSky variables
-
+    public bool isBoba;
 
     // Start is called before the first frame update
     void Start()
@@ -54,7 +58,7 @@ public class NMEStateMachine : MonoBehaviour
         isIdle = true;
         IPos = transform.position;
         IRot = transform.forward;
-
+        
         enter = new Dictionary<State, System.Action>()
         {
             {State.Idle, entI },
@@ -134,34 +138,41 @@ public class NMEStateMachine : MonoBehaviour
     //KillLuke: w
     void entK()
     {
-
+        KillOnce = true;
     }
     void extK()
     {
-
+        StopCoroutine("Strafe");
     }
     void excK()
     {
         //circle luke
-        if (Time.realtimeSinceStartup % 2 == 0)//every 2 seconds the position to 'circle' around luke will update
+        if (KillOnce)
         {
-            temp = Random.Range(-1, 1);
-            KPos = (Plyr.transform.position + (3 * Plyr.transform.forward)) + new Vector3(temp, Mathf.Sqrt(1- Mathf.Pow(temp, 2)), 0);
-            AI.destination = KPos;
+            InvokeRepeating("Strafe", 0f, 2f);
+            KillOnce = false;
         }
+
         //shoot luke
         transform.LookAt(Plyr.transform);
-        //shoot look here
+        //shoot luke here
 
         Debug.Log("execute KillLuke");
         if (Input.GetKey(KeyCode.Q))//replace with luke being out of signt
         {
             Transition(State.Idle);
         }
-        if (Input.GetKey(KeyCode.E))//only have boba use this
+        if (Input.GetKey(KeyCode.E))//only have boba use this. lock the transition on some timer AND isBoba
         {
             Transition(State.BobaGoWeeInDaSky);
         }
+    }
+    IEnumerator Strafe()
+    {
+        KPos = (Plyr.transform.position + (5 * Plyr.transform.forward) + (4 * Random.insideUnitSphere));
+        //AI.destination = KPos;
+        AI.destination = transform.position + new Vector3(1, 0, 0);
+        yield return null;
     }
 
     //BobaGoWeeInDaSky: e
@@ -176,28 +187,39 @@ public class NMEStateMachine : MonoBehaviour
     void excB()
     {
         //big jetpack jump
-        StartCoroutine(JetpackJump());    
+        StartCoroutine(JetpackJump());
 
-        Debug.Log("execute BobaGoWeeInDaSky");
+        /*Debug.Log("execute BobaGoWeeInDaSky");
         if (Input.GetKey(KeyCode.W))
         {
             Transition(State.KillLuke);
-        }
+        }*/
     }
-
-    IEnumerator JetpackJump()
+    IEnumerator JetpackJump()//speed up the movement speed of the navmesh, this allows for boba to fall down faster than a gentle drift
     {
         temp = 0;
-        while(temp < 1.7)
+        AI.speed = SPD * 8;
+        while (temp < 257)
         {
-            transform.position += new Vector3(0, 0, .01f);
-            temp += .01f;
+            transform.position += new Vector3(0, 0.017f, 0f);
+            temp += 1;
+            yield return new WaitForSecondsRealtime(.001f);
         }
+        /*temp = 0;
+        while (temp < 257)
+        {
+            transform.position -= new Vector3(0, 0.05f, 0f);
+            temp += 4;
+            yield return new WaitForSecondsRealtime(.001f);
+        }*/
         temp = 0;
-        //Transition(State.KillLuke);
-
-        yield return null;
+        AI.speed = SPD;
+        Transition(State.KillLuke);
     }
 
+    void OnDrawGizmos()
+    {
+        Debug.DrawLine(Plyr.transform.position, 5 * Plyr.transform.forward, Color.blue);
+    }
 
 }
