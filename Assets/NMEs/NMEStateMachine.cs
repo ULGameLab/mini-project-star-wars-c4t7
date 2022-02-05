@@ -28,7 +28,6 @@ public class NMEStateMachine : MonoBehaviour
     private Dictionary<State, System.Action> exit;
     private Dictionary<State, System.Action> execute;
 
-    float temp;
     [Tooltip("default speed for navmeshes is 3.5")]
     public float SPD;
 
@@ -128,8 +127,8 @@ public class NMEStateMachine : MonoBehaviour
             }
         }
         
-        Debug.Log("execute Idle");//change to can see luke later
-        if (Input.GetKey(KeyCode.W))
+        //Debug.Log("execute Idle")
+        if (Input.GetKey(KeyCode.W))//change to can see luke later
         {
             Transition(State.KillLuke);
         }
@@ -157,7 +156,7 @@ public class NMEStateMachine : MonoBehaviour
         transform.LookAt(Plyr.transform);
         //shoot luke here
 
-        Debug.Log("execute KillLuke");
+        //Debug.Log("execute KillLuke");
         if (Input.GetKey(KeyCode.Q))//replace with luke being out of signt
         {
             Transition(State.Idle);
@@ -167,12 +166,11 @@ public class NMEStateMachine : MonoBehaviour
             Transition(State.BobaGoWeeInDaSky);
         }
     }
-    IEnumerator Strafe()
+    void Strafe()
     {
-        KPos = (Plyr.transform.position + (5 * Plyr.transform.forward) + (4 * Random.insideUnitSphere));
-        //AI.destination = KPos;
-        AI.destination = transform.position + new Vector3(1, 0, 0);
-        yield return null;
+        Vector2 tempv2 = Random.insideUnitCircle;
+        KPos = (Plyr.transform.position + (7 * Plyr.transform.forward) + (6 * new Vector3(tempv2.x, 0f, tempv2.y)));
+        AI.destination = KPos;
     }
 
     //BobaGoWeeInDaSky: e
@@ -188,38 +186,18 @@ public class NMEStateMachine : MonoBehaviour
     {
         //big jetpack jump
         StartCoroutine(JetpackJump());
-
-        /*Debug.Log("execute BobaGoWeeInDaSky");
-        if (Input.GetKey(KeyCode.W))
-        {
-            Transition(State.KillLuke);
-        }*/
     }
     IEnumerator JetpackJump()//speed up the movement speed of the navmesh, this allows for boba to fall down faster than a gentle drift
     {
-        temp = 0;
+        float tempf = 0;
         AI.speed = SPD * 8;
-        while (temp < 257)
+        while (tempf < 257)
         {
             transform.position += new Vector3(0, 0.017f, 0f);
-            temp += 1;
+            tempf += 1;
             yield return new WaitForSecondsRealtime(.001f);
         }
-        /*temp = 0;
-        while (temp < 257)
-        {
-            transform.position -= new Vector3(0, 0.05f, 0f);
-            temp += 4;
-            yield return new WaitForSecondsRealtime(.001f);
-        }*/
-        temp = 0;
         AI.speed = SPD;
         Transition(State.KillLuke);
     }
-
-    void OnDrawGizmos()
-    {
-        Debug.DrawLine(Plyr.transform.position, 5 * Plyr.transform.forward, Color.blue);
-    }
-
 }
