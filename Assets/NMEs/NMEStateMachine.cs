@@ -148,7 +148,7 @@ public class NMEStateMachine : MonoBehaviour
         //circle luke
         if (KillOnce)
         {
-            InvokeRepeating("Strafe", 0f, 2f);
+            InvokeRepeating("Strafe", 0f, 7f);//Roberto changed this seens to work kind of better with A high repetitiong
             KillOnce = false;
         }
 
@@ -169,7 +169,7 @@ public class NMEStateMachine : MonoBehaviour
     void Strafe()
     {
         Vector2 tempv2 = Random.insideUnitCircle;
-        KPos = (Plyr.transform.position + (7 * Plyr.transform.forward) + (6 * new Vector3(tempv2.x, 0f, tempv2.y)));
+        KPos = (Plyr.transform.position + (Random.RandomRange(7,13) * Plyr.transform.forward) + (Random.Range(6,12) * new Vector3(tempv2.x, 0f, tempv2.y)));//Roberto changed this It add a bit more randoness to the behavior
         AI.destination = KPos;
     }
 
