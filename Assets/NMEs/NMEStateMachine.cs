@@ -8,10 +8,10 @@ enemy state machine with 3 states.
 [1] Idle
 [2] KillLuke
 [3] BobaGoWeeInDaSky
-[1>2] see player
+[1>2] see player and in range of sight
 [2>1] can't see player
-[2>3] special conditional for boba to jetpack jump for a bit
-[3>2] special conditional for Boba to stop jetpacking, probably gonna be a timer so he dosen't just stay up there for too long.
+[2>3] (funky looping counter math with a % and a range fo incrimenting) for boba to jetpack jump for a bit
+[3>2] instant, jetpack is a coroutine so boba can shoot at the player while in the sky
 */
 
 [RequireComponent(typeof(NavMeshAgent))]
@@ -44,9 +44,19 @@ public class NMEStateMachine : MonoBehaviour
 
     bool KillOnce;
     Vector3 KPos;
+    public Transform GunTipT;
+    GameObject SelectedPre;
+    GameObject Fired;
+    public GameObject BlastetBolt;
+    public GameObject Rocket;
+    int rocketMult = 3;
+    float SelectedF;
+    public float BlasterBoltF = 5.5f;
+    public float RocketF = 1.7f;
     
     //bobaGoWeeInDaSky variables
     public bool isBoba;
+    int JmpTme = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -126,9 +136,9 @@ public class NMEStateMachine : MonoBehaviour
                 isIdle = true;
             }
         }
-        
+
         //Debug.Log("execute Idle")
-        if (Input.GetKey(KeyCode.W))//change to can see luke later
+        if (InRange() && CanSee()/*Input.GetKey(KeyCode.W)*/)//change to can see luke later
         {
             Transition(State.KillLuke);
         }
@@ -145,23 +155,32 @@ public class NMEStateMachine : MonoBehaviour
     }
     void excK()
     {
+        //math on the random actions that enemies can take
+        JmpTme = (JmpTme + Random.Range(0, 3)) % 350;
+        if(JmpTme > 265) { SelectedPre = Rocket; SelectedF = RocketF; }
+        else { SelectedPre = BlastetBolt; SelectedF = BlasterBoltF; }
+
         //circle luke
         if (KillOnce)
         {
-            InvokeRepeating("Strafe", 0f, 2f);
+            InvokeRepeating("Strafe", 0f, 8f);
             KillOnce = false;
         }
 
         //shoot luke
         transform.LookAt(Plyr.transform);
-        //shoot luke here
 
+        //instantiate bullets here
+        if (SelectedPre == Rocket) { if (JmpTme % 7 * rocketMult == 0) { Fire(); } }
+        else { if (JmpTme % 7 == 0) { Fire(); } }
+
+        //transitions
         //Debug.Log("execute KillLuke");
-        if (Input.GetKey(KeyCode.Q))//replace with luke being out of signt
+        if (!CanSee()/*Input.GetKey(KeyCode.Q)*/)//replace with luke being out of signt
         {
             Transition(State.Idle);
         }
-        if (Input.GetKey(KeyCode.E))//only have boba use this. lock the transition on some timer AND isBoba
+        if (isBoba && (JmpTme == 30 || JmpTme == 120 || JmpTme == 250 || JmpTme == 251 || JmpTme == 86 || JmpTme == 85 || JmpTme == 195)/*Input.GetKey(KeyCode.E)*/)
         {
             Transition(State.BobaGoWeeInDaSky);
         }
@@ -171,6 +190,18 @@ public class NMEStateMachine : MonoBehaviour
         Vector2 tempv2 = Random.insideUnitCircle;
         KPos = (Plyr.transform.position + (7 * Plyr.transform.forward) + (6 * new Vector3(tempv2.x, 0f, tempv2.y)));
         AI.destination = KPos;
+    }
+    void Fire()
+    {
+        Fired = Instantiate(SelectedPre);
+        Fired.transform.position = GunTipT.position;
+        Fired.transform.rotation = GunTipT.rotation;
+        Fired.GetComponent<Rigidbody>().mass = .2f;
+
+        Vector3 FinalF = (GunTipT.forward * SelectedF);
+
+        Fired.GetComponent<Rigidbody>().velocity = transform.GetComponent<Rigidbody>().velocity;
+        Fired.GetComponent<Rigidbody>().AddForce(FinalF, ForceMode.Impulse);
     }
 
     //BobaGoWeeInDaSky: e
@@ -184,10 +215,11 @@ public class NMEStateMachine : MonoBehaviour
     }
     void excB()
     {
+        //auto transition, its in the coroutine
         //big jetpack jump
         StartCoroutine(JetpackJump());
     }
-    IEnumerator JetpackJump()//speed up the movement speed of the navmesh, this allows for boba to fall down faster than a gentle drift
+    IEnumerator JetpackJump()//the jetpack jump boba does.
     {
         float tempf = 0;
         AI.speed = SPD * 8;
