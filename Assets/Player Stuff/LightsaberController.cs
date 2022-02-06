@@ -6,17 +6,33 @@ public class LightsaberController : MonoBehaviour
 {
 
     float Damage;
+    public GameObject StrikeZone;
+    bool AttackReady;
+    public GameObject DeflectZone;
+    bool DeflectReady;
+    public float DeflectWait;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        AttackReady = true;
+        DeflectReady = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (AttackReady && Input.GetButtonDown("Fire1"))
+        {
+            StartCoroutine(Deflect());
+            StartCoroutine(DeflectReadying());
+        }
+
+        if (DeflectReady && Input.GetButtonDown("Fire2"))
+        {
+            StartCoroutine(Deflect());
+            StartCoroutine(DeflectReadying());
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -29,6 +45,39 @@ public class LightsaberController : MonoBehaviour
             if (HB != null) { HB.TakeDamage(DMG); }
         }
         
+    }
+
+    IEnumerator Deflect()
+    {
+        DeflectReady = false;
+        DeflectZone.SetActive(true);
+        //RepulseTimer = 0f;
+        yield return new WaitForSeconds(.20f);
+        DeflectZone.SetActive(false);
+    }
+
+    IEnumerator DeflectReadying()
+    {
+        yield return new WaitForSeconds(DeflectWait);
+        DeflectReady = true;
+
+        /*
+        while (RepulseTimer != 1)
+        {
+            RepulseTimer += .01f;
+            yield return new WaitForSeconds(.01f);
+        }
+        */
+    }
+
+    public bool GetRepulsorReady()
+    {
+        return DeflectReady;
+    }
+
+    public float GetWait()
+    {
+        return DeflectWait / 100;
     }
 
 }
