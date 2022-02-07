@@ -19,8 +19,8 @@ public class MeleeZone : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
 
-        float DMG = 50;
-        if (collision.collider.tag == "Enemy" || collision.collider.tag == "Player")
+        float DMG = 25;
+        if (collision.collider.tag == "Enemy" || collision.collider.tag == "Boss")
         {
             HeathBar HB = collision.gameObject.GetComponent<HeathBar>();
             if (HB != null) { HB.TakeDamage(DMG); }
