@@ -163,11 +163,7 @@ public class NMEStateMachine : MonoBehaviour
         //circle luke
         if (KillOnce)
         {
-<<<<<<< HEAD
-            InvokeRepeating("Strafe", 0f, 8f);
-=======
-            InvokeRepeating("Strafe", 0f, 7f);//Roberto changed this seens to work kind of better with A high repetitiong
->>>>>>> eff26e43e724f4eea2ae42864113df44e2a85456
+            InvokeRepeating("Strafe", 0f, 8f);//Roberto changed this seens to work kind of better with A high repetitiong
             KillOnce = false;
         }
 
