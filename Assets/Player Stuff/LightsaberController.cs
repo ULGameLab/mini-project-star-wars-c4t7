@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LightsaberController : MonoBehaviour
 {
-
+    public GameObject BaseLightsaber;
     float Damage;
     public GameObject StrikeZone;
     bool AttackReady;
@@ -37,11 +37,13 @@ public class LightsaberController : MonoBehaviour
         if (Input.GetButtonDown("Fire2"))
         {
             //DeflectReady = false;
+            BaseLightsaber.SetActive(false);
             DeflectZone.SetActive(true);
         }
         if (Input.GetButtonUp("Fire2"))
         {
             DeflectZone.SetActive(false);
+            BaseLightsaber.SetActive(true);
         }
 
     }
@@ -85,10 +87,12 @@ public class LightsaberController : MonoBehaviour
     IEnumerator Attack()
     {
         AttackReady = false;
+        BaseLightsaber.SetActive(false);
         StrikeZone.SetActive(true);
         //RepulseTimer = 0f;
         yield return new WaitForSeconds(.05f);
         StrikeZone.SetActive(false);
+        BaseLightsaber.SetActive(true);
     }
 
     IEnumerator AttackReadying()

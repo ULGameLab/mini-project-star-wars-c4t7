@@ -7,6 +7,7 @@ public class PlayInput : MonoBehaviour {
     public float mSens = 600f;
     float xRotation = 0f;
     public Transform playerBody;
+    [SerializeField] private Transform UserCamera;
 
     // Repulsor
     public GameObject Cone;
@@ -37,14 +38,39 @@ public class PlayInput : MonoBehaviour {
 
         // Repulsor
         // if (RepulseTimer >= 1 && Input.GetButtonDown("Fire2"))
+        /*
         if (RepulsorReady && Input.GetButtonDown("Fire2"))
         { 
             StartCoroutine(Repulsor()); 
             StartCoroutine(RepulsorReadying());
         }
-        
+        */
+        /*
+        Physics.Raycast(UserCamera.position, UserCamera.forward.normalized);
+        Debug.DrawRay(transform.position, UserCamera.forward.normalized, Color.red);
+        */
+
     }
-    
+
+    private void FixedUpdate()
+    {
+        int layerMask = 1 << 8;
+        layerMask = ~layerMask;
+
+        RaycastHit hit;
+        if (Physics.Raycast(UserCamera.position, UserCamera.forward, out hit, Mathf.Infinity, layerMask))
+        {
+            Debug.DrawRay(transform.position, UserCamera.forward * hit.distance, Color.red);
+            Debug.Log("Did hit");
+        }
+        else
+        {
+            Debug.DrawRay(transform.position, UserCamera.forward * 1000, Color.blue);
+            Debug.Log("Did not hit");
+        }
+
+    }
+
     IEnumerator Repulsor()
     {
         RepulsorReady = false;
