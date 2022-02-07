@@ -17,13 +17,13 @@ public class PlayMove : MonoBehaviour
 
     public float DashSpeed;
     public float DashTime;
-    public float DashRecharge;
+    public float DashRecharge = 1f;
     float dashTime;
 
     public Transform body;
     bool onGround;
     bool isCrouched = false;
-    bool DashReady = true;
+    bool DashReady;
 
     Vector3 movement;
 
@@ -31,8 +31,9 @@ public class PlayMove : MonoBehaviour
     void Start()
     {
         Ospeed = speed;
-        dashTime = DashTime / 10f;
-        //DashReady = true;
+        dashTime = DashTime/10f; /// 10f;
+        DashReady = true;
+        DashSpeed = 2 * Ospeed;
     }
 
     // Update is called once per frame
@@ -113,16 +114,9 @@ public class PlayMove : MonoBehaviour
 
     IEnumerator DashReadying()
     {
+        //DashReady = false;
         yield return new WaitForSeconds(DashRecharge);
         DashReady = true;
-
-        /*
-        while (RepulseTimer != 1)
-        {
-            RepulseTimer += .01f;
-            yield return new WaitForSeconds(.01f);
-        }
-        */
     }
 
     public bool GetDashReady()
