@@ -72,17 +72,17 @@ public class LightsaberController : MonoBehaviour
 
     IEnumerator Attack()
     {
-        DeflectReady = false;
-        DeflectZone.SetActive(true);
+        AttackReady = false;
+        StrikeZone.SetActive(true);
         //RepulseTimer = 0f;
-        yield return new WaitForSeconds(.20f);
-        DeflectZone.SetActive(false);
+        yield return new WaitForSeconds(.05f);
+        StrikeZone.SetActive(false);
     }
 
     IEnumerator AttackReadying()
     {
         yield return new WaitForSeconds(DeflectWait);
-        DeflectReady = true;
+        AttackReady = true;
 
         /*
         while (RepulseTimer != 1)
