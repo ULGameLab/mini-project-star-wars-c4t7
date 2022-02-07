@@ -27,12 +27,23 @@ public class LightsaberController : MonoBehaviour
             StartCoroutine(Attack());
             StartCoroutine(AttackReadying());
         }
-
+        /*
         if (DeflectReady && Input.GetButtonDown("Fire2"))
         {
             StartCoroutine(Deflect());
             StartCoroutine(DeflectReadying());
         }
+        */
+        if (Input.GetButtonDown("Fire2"))
+        {
+            //DeflectReady = false;
+            DeflectZone.SetActive(true);
+        }
+        if (Input.GetButtonUp("Fire2"))
+        {
+            DeflectZone.SetActive(false);
+        }
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -46,7 +57,8 @@ public class LightsaberController : MonoBehaviour
         }
         
     }
-
+    /*
+    
     IEnumerator Deflect()
     {
         DeflectReady = false;
@@ -68,7 +80,7 @@ public class LightsaberController : MonoBehaviour
             yield return new WaitForSeconds(.01f);
         }
         */
-    }
+    //}
 
     IEnumerator Attack()
     {
