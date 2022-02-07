@@ -24,8 +24,8 @@ public class LightsaberController : MonoBehaviour
     {
         if (AttackReady && Input.GetButtonDown("Fire1"))
         {
-            StartCoroutine(Deflect());
-            StartCoroutine(DeflectReadying());
+            StartCoroutine(Attack());
+            StartCoroutine(AttackReadying());
         }
 
         if (DeflectReady && Input.GetButtonDown("Fire2"))
@@ -57,6 +57,29 @@ public class LightsaberController : MonoBehaviour
     }
 
     IEnumerator DeflectReadying()
+    {
+        yield return new WaitForSeconds(DeflectWait);
+        DeflectReady = true;
+
+        /*
+        while (RepulseTimer != 1)
+        {
+            RepulseTimer += .01f;
+            yield return new WaitForSeconds(.01f);
+        }
+        */
+    }
+
+    IEnumerator Attack()
+    {
+        DeflectReady = false;
+        DeflectZone.SetActive(true);
+        //RepulseTimer = 0f;
+        yield return new WaitForSeconds(.20f);
+        DeflectZone.SetActive(false);
+    }
+
+    IEnumerator AttackReadying()
     {
         yield return new WaitForSeconds(DeflectWait);
         DeflectReady = true;
