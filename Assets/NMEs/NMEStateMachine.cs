@@ -157,7 +157,7 @@ public class NMEStateMachine : MonoBehaviour
     {
         //math on the random actions that enemies can take
         JmpTme = (JmpTme + Random.Range(0, 3)) % 350;
-        if(JmpTme > 265) { SelectedPre = Rocket; SelectedF = RocketF; }
+        if(JmpTme > 265 && isBoba) { SelectedPre = Rocket; SelectedF = RocketF; }
         else { SelectedPre = BlastetBolt; SelectedF = BlasterBoltF; }
 
         //circle luke
@@ -171,8 +171,8 @@ public class NMEStateMachine : MonoBehaviour
         transform.LookAt(Plyr.transform);
 
         //instantiate bullets here
-        if (SelectedPre == Rocket) { if (JmpTme % 7 * rocketMult == 0) { Fire(); } }
-        else { if (JmpTme % 7 == 0) { Fire(); } }
+        if (SelectedPre == Rocket) { if (JmpTme % 70 * rocketMult == 0) { Fire(); } }
+        else { if (JmpTme % 70 == 0) { Fire(); } }
 
         //transitions
         //Debug.Log("execute KillLuke");
@@ -188,7 +188,7 @@ public class NMEStateMachine : MonoBehaviour
     void Strafe()
     {
         Vector2 tempv2 = Random.insideUnitCircle;
-        KPos = (Plyr.transform.position + (Random.RandomRange(7,13) * Plyr.transform.forward) + (Random.Range(6,12) * new Vector3(tempv2.x, 0f, tempv2.y)));//Roberto changed this It add a bit more randoness to the behavior
+        KPos = (Plyr.transform.position + (Random.RandomRange(7, 13) * Plyr.transform.forward) + (Random.Range(6, 12) * new Vector3(tempv2.x, 0f, tempv2.y)));//Roberto changed this It add a bit more randoness to the behavior
         AI.destination = KPos;
     }
     void Fire()
