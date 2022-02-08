@@ -40,6 +40,8 @@ public class HeathBar : MonoBehaviour
     [Header("Options")]
     [Tooltip("this is checked if the object is to remain in the scene once its health is depleted")]
     public bool persisBody;
+    [Tooltip("this is checked if the healthbar is allways visible, even at full health")]
+    public bool isVisbl;
 
     [Header("References")]
     [Tooltip("this is a reference to the object that you want to have a healthbar")]
@@ -63,16 +65,19 @@ public class HeathBar : MonoBehaviour
 
     void Update()
     {
-        HldrT.rotation = Quaternion.Euler(0, 0, 0);//this keeps the ehalthbar above the object at all times
-        if (CurH < MaxH && HBoff)
+        if (!isVisbl)
         {
-            CanObj.SetActive(true);
-            HBoff = false;
-        }
-        if (!HBoff)
-        {
-            CanObj.transform.rotation = Quaternion.LookRotation(FaceT.position - CanObj.transform.position);
-        }
+            HldrT.rotation = Quaternion.Euler(0, 0, 0);//this keeps the healthbar above the object at all times
+            if (CurH < MaxH && HBoff)
+            {
+                CanObj.SetActive(true);
+                HBoff = false;
+            }
+            if (!HBoff)
+            {
+                CanObj.transform.rotation = Quaternion.LookRotation(FaceT.position - CanObj.transform.position);
+            }
+        } else { CanObj.SetActive(true); }
     }
 
     public void TakeDamage(float dmg)
