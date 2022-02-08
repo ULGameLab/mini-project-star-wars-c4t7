@@ -2100,6 +2100,7 @@ GameObject:
   - component: {fileID: 786982849}
   - component: {fileID: 786982848}
   - component: {fileID: 786982854}
+  - component: {fileID: 786982855}
   m_Layer: 0
   m_Name: NMEdev (trooper example)
   m_TagString: Enemy
@@ -2195,11 +2196,32 @@ MeshCollider:
   m_GameObject: {fileID: 786982847}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &786982855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786982847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ef1dca59d66c0d40aaadc5792549620, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxH: 25
+  CurH: 25
+  persisBody: 0
+  isVisbl: 1
+  SelfObj: {fileID: 786982847}
+  HBSl: {fileID: 601880574}
+  CanObj: {fileID: 212370166}
+  FaceT: {fileID: 2079006943}
+  HldrT: {fileID: 1859420695}
 --- !u!1 &838829862
 GameObject:
   m_ObjectHideFlags: 0
@@ -4447,7 +4469,6 @@ GameObject:
   - component: {fileID: 1998451033}
   - component: {fileID: 1998451032}
   - component: {fileID: 1998451031}
-  - component: {fileID: 1998451034}
   m_Layer: 0
   m_Name: Model
   m_TagString: Enemy
@@ -4534,27 +4555,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1998451029}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1998451034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1998451029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ef1dca59d66c0d40aaadc5792549620, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxH: 25
-  CurH: 25
-  persisBody: 0
-  isVisbl: 0
-  SelfObj: {fileID: 786982847}
-  HBSl: {fileID: 601880574}
-  CanObj: {fileID: 212370166}
-  FaceT: {fileID: 2079006943}
-  HldrT: {fileID: 1859420695}
 --- !u!1 &1999736833
 GameObject:
   m_ObjectHideFlags: 0
@@ -4920,6 +4920,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4742659710925304692, guid: fea5f67e76e2c2d4a821214292c30bd2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4742659712009798173, guid: fea5f67e76e2c2d4a821214292c30bd2, type: 3}
       propertyPath: m_Name
       value: FPS Franklin
