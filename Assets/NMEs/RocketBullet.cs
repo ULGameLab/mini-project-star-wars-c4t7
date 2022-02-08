@@ -61,9 +61,16 @@ public class RocketBullet : MonoBehaviour
                 Rigidbody RB = colliders[i].GetComponent<Rigidbody>();
                 if (RB != null) { RB.AddExplosionForce(DMG * 3 , ExplosionBall.transform.position, temp, 0, ForceMode.Impulse); }
 
+                if (collision.collider.tag == "Player")
+                {
+                    HeathBar HB = colliders[i].GetComponent<HeathBar>();
+                    if (HB != null) { HB.TakeDamage(DMG * 1.75f); }
+                }
+                /*
                 //this gets the healthbar script from any collider caught inside of the radius, and deals damage to them
                 HeathBar HB = colliders[i].GetComponent<HeathBar>();
                 if (HB != null) { HB.TakeDamage(DMG * 1.75f); }
+                */
             }
         }
         StartCoroutine(KillBullet(.04f));
