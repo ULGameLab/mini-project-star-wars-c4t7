@@ -34,7 +34,7 @@ public class MeleeZone : MonoBehaviour
         if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Boss")
         {
             HeathBar HB = other.gameObject.GetComponent<HeathBar>();
-            if (HB != null) { HB.TakeDamage(25); }
+            if (HB != null) { HB.TakeDamage(25f); }
         }
         
     }
