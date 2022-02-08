@@ -14,6 +14,7 @@ public class ForceTrooper : MonoBehaviour
     {
         if ((TheDestination.transform.position - this.transform.position).sqrMagnitude < 4)
         {
+            /*
             if (Input.GetKey(KeyCode.E))//if grab
             {
                 GetComponent<Rigidbody>().useGravity = false;
@@ -27,6 +28,7 @@ public class ForceTrooper : MonoBehaviour
                 GetComponent<Rigidbody>().useGravity = true;
                 //GetComponent<Rigidbody>().isKinematic = true;
             }
+            */
             if (PushReady && Input.GetKeyDown(KeyCode.F))// if push it
             {
                 StartCoroutine(Push());
