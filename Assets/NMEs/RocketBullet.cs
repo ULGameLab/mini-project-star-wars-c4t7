@@ -42,7 +42,7 @@ public class RocketBullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.tag == "Enemy" || collision.collider.tag == "Player")
+        if (collision.collider.tag == "Player")
         {
             HeathBar HB = collision.gameObject.GetComponent<HeathBar>();
             if (HB != null) { HB.TakeDamage(DMG); }
@@ -51,7 +51,7 @@ public class RocketBullet : MonoBehaviour
         {
             IsExploded = true;//flipped so that it only explodes once
             float tempS = ExplosionBall.transform.localScale.x;//this gets the scale of the explosion ball inside the grenade to scale it upwards for simpler math
-            float temp = (tempS * 200) + (DMG * .15f);
+            float temp = (tempS * 5000) + (DMG * .15f);
             ExplosionBall.transform.localScale = new Vector3(temp, temp, temp);//this make sthe explosion visible with a simple effect
 
             Collider[] colliders = Physics.OverlapSphere(ExplosionBall.transform.position, temp * tempS);//this gets a reference to all colliders within a radius

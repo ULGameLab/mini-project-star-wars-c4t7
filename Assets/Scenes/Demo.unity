@@ -6638,7 +6638,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1512243984
 Transform:
   m_ObjectHideFlags: 0
@@ -6897,7 +6897,7 @@ MonoBehaviour:
   BlastetBolt: {fileID: 4361287648203001085, guid: c0b2b0dd3a3d31546a96da09ea3f03fb, type: 3}
   Rocket: {fileID: 3623766267243642213, guid: 57e0bf2764c59cb4eae40319e8229252, type: 3}
   BlasterBoltF: 3.5
-  RocketF: 8.7
+  RocketF: 2
   isBoba: 1
 --- !u!195 &1559509843
 NavMeshAgent:
