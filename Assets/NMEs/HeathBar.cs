@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 /*
 use case for this script
 [enemies]
@@ -42,6 +43,7 @@ public class HeathBar : MonoBehaviour
     public bool persisBody;
     [Tooltip("this is checked if the healthbar is allways visible, even at full health")]
     public bool isVisbl;
+    public bool EndonDeath;
 
     [Header("References")]
     [Tooltip("this is a reference to the object that you want to have a healthbar")]
@@ -102,7 +104,14 @@ public class HeathBar : MonoBehaviour
                     Color temp = SelfObj.GetComponent<Renderer>().material.color;
                     temp.a = 1f - i;
                 }//wanted to do a fade out, but that just dosen't work for some reason. maybe come back to this way later.*/
+                if (EndonDeath)
+                {
+                    Cursor.lockState = CursorLockMode.None;
+                    SceneManager.LoadScene("MainMenu");
+
+                }
                 Destroy(SelfObj);
+                
             }
         }
     }

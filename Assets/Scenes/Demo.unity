@@ -5665,6 +5665,7 @@ MonoBehaviour:
   CurH: 25
   persisBody: 0
   isVisbl: 0
+  EndonDeath: 0
   SelfObj: {fileID: 786982847}
   HBSl: {fileID: 601880574}
   CanObj: {fileID: 212370166}
@@ -6134,6 +6135,7 @@ MonoBehaviour:
   CurH: 25
   persisBody: 0
   isVisbl: 0
+  EndonDeath: 0
   SelfObj: {fileID: 858057924}
   HBSl: {fileID: 1413227274}
   CanObj: {fileID: 1953211201}
@@ -10838,6 +10840,7 @@ MonoBehaviour:
   CurH: 25
   persisBody: 0
   isVisbl: 0
+  EndonDeath: 0
   SelfObj: {fileID: 1491773494}
   HBSl: {fileID: 1580598961}
   CanObj: {fileID: 2145486815}
@@ -11434,6 +11437,7 @@ MonoBehaviour:
   CurH: 59
   persisBody: 0
   isVisbl: 1
+  EndonDeath: 0
   SelfObj: {fileID: 1559509838}
   HBSl: {fileID: 556386639}
   CanObj: {fileID: 112218953}
@@ -12473,6 +12477,7 @@ MonoBehaviour:
   CurH: 25
   persisBody: 0
   isVisbl: 0
+  EndonDeath: 0
   SelfObj: {fileID: 1722375401}
   HBSl: {fileID: 726003940}
   CanObj: {fileID: 1463055642}
@@ -13961,7 +13966,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4742659712009798173, guid: fea5f67e76e2c2d4a821214292c30bd2, type: 3}
       propertyPath: m_Name
-      value: FPS Franklin (1)
+      value: Luke
       objectReference: {fileID: 0}
     - target: {fileID: 4742659712009798173, guid: fea5f67e76e2c2d4a821214292c30bd2, type: 3}
       propertyPath: m_TagString
@@ -14072,6 +14077,7 @@ MonoBehaviour:
   CurH: 150
   persisBody: 0
   isVisbl: 1
+  EndonDeath: 1
   SelfObj: {fileID: 1937673180}
   HBSl: {fileID: 1625281362}
   CanObj: {fileID: 69387049}
@@ -15084,6 +15090,7 @@ MonoBehaviour:
   CurH: 25
   persisBody: 0
   isVisbl: 0
+  EndonDeath: 0
   SelfObj: {fileID: 2102091682}
   HBSl: {fileID: 1432675895}
   CanObj: {fileID: 555233925}
