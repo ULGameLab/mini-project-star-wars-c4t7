@@ -27,7 +27,7 @@ public class Force : MonoBehaviour
             
             if (Input.GetKeyDown(KeyCode.R))// if pull it
             {
-                GetComponent<Rigidbody>().AddForce(ThePlayer.transform.forward * 500 * -1);
+                GetComponent<Rigidbody>().AddForce(ThePlayer.transform.forward * 700 * -1);
             }
         }
     }

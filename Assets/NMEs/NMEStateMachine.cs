@@ -156,8 +156,8 @@ public class NMEStateMachine : MonoBehaviour
     void excK()
     {
         //math on the random actions that enemies can take
-        JmpTme = (JmpTme + Random.Range(0, 3)) % 350;
-        if(JmpTme > 265 && isBoba) { SelectedPre = Rocket; SelectedF = RocketF; }
+        JmpTme = (JmpTme + Random.Range(0, 3)) % 550;
+        if(JmpTme > 385 && isBoba) { SelectedPre = Rocket; SelectedF = RocketF; }
         else { SelectedPre = BlastetBolt; SelectedF = BlasterBoltF; }
 
         //circle luke
@@ -180,7 +180,7 @@ public class NMEStateMachine : MonoBehaviour
         {
             Transition(State.Idle);
         }
-        if (isBoba && (JmpTme == 30 || JmpTme == 120 || JmpTme == 250 || JmpTme == 251 || JmpTme == 86 || JmpTme == 85 || JmpTme == 195)/*Input.GetKey(KeyCode.E)*/)
+        if (isBoba && (JmpTme == 30 /*|| JmpTme == 120*/ || JmpTme == 250 || JmpTme == 251 /*|| JmpTme == 86 || JmpTme == 85 || JmpTme == 195*/)/*Input.GetKey(KeyCode.E)*/)
         {
             Transition(State.BobaGoWeeInDaSky);
         }
