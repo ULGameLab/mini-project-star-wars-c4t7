@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3099369, g: 0.24019307, b: 0.15635201, a: 1}
+  m_IndirectSpecularColor: {r: 0.30993629, g: 0.2401931, b: 0.15635192, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12568,8 +12568,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b17d8d0d2e11f644bde2038f6f82fbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TheDestination: {fileID: 0}
-  ThePlayer: {fileID: 0}
+  TheDestination: {fileID: 1194826342}
+  ThePlayer: {fileID: 283894154}
 --- !u!114 &1986040628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12582,8 +12582,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5168db6820ffb640b0ea70afd1ae4e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TheDestination: {fileID: 0}
-  ThePlayer: {fileID: 0}
+  TheDestination: {fileID: 1194826342}
+  ThePlayer: {fileID: 283894154}
 --- !u!114 &1986040629
 MonoBehaviour:
   m_ObjectHideFlags: 0
