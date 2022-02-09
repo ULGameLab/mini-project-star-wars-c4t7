@@ -31,5 +31,6 @@ public class BasicBulletOld : MonoBehaviour
             HeathBar HB = collision.gameObject.GetComponent<HeathBar>();
             if (HB != null) { HB.TakeDamage(DMG); }
         }
+        Destroy(Bullet);
     }
 }

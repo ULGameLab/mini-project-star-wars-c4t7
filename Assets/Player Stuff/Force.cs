@@ -13,6 +13,7 @@ public class Force : MonoBehaviour
             if (Input.GetKey(KeyCode.E))//if grab
             {
                 GetComponent<Rigidbody>().useGravity = false;
+                GetComponent<Rigidbody>().detectCollisions = true;
                 this.transform.position = TheDestination.position;
                 this.transform.parent = GameObject.Find("ForcePoint").transform;
             } else// release it
@@ -27,7 +28,7 @@ public class Force : MonoBehaviour
             
             if (Input.GetKeyDown(KeyCode.R))// if pull it
             {
-                GetComponent<Rigidbody>().AddForce(ThePlayer.transform.forward * 500 * -1);
+                GetComponent<Rigidbody>().AddForce(ThePlayer.transform.forward * 700 * -1);
             }
         }
     }
