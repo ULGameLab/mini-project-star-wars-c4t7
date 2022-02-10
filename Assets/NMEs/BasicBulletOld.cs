@@ -11,6 +11,7 @@ public class BasicBulletOld : MonoBehaviour
     public float Damage;
     float DMG;//this is the damage that the bullet will do, calculated off current speed, mass, and damage modifyers from the gun.
 
+
     void Start()
     {
         Bullet = this.gameObject;

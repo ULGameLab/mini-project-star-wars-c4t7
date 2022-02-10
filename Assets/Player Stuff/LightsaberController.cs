@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LightsaberController : MonoBehaviour
 {
+    public AudioSource sounds;
+    public AudioClip swish;
     public GameObject BaseLightsaber;
     //float Damage;
     public GameObject StrikeZone;
@@ -24,6 +26,7 @@ public class LightsaberController : MonoBehaviour
     {
         if (AttackReady && Input.GetButtonDown("Fire1"))
         {
+            sounds.PlayOneShot(swish);
             StartCoroutine(Attack());
             StartCoroutine(AttackReadying());
         }
