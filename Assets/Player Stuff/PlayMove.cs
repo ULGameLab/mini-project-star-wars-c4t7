@@ -25,8 +25,6 @@ public class PlayMove : MonoBehaviour
     bool isCrouched = false;
     bool DashReady;
 
-    public ForceLevelStatus status;
-    private int forceReduction = 5;
     Vector3 movement;
 
     // Start is called before the first frame update
@@ -73,9 +71,8 @@ public class PlayMove : MonoBehaviour
         }
 
         //Dash
-        if (DashReady && Input.GetKey(KeyCode.LeftShift) && status.getForce() >= forceReduction)
+        if (DashReady && Input.GetKey(KeyCode.LeftShift))
         {
-            status.AddForce(-forceReduction);
             StartCoroutine(Dash());
             StartCoroutine(DashReadying());
         }
@@ -108,10 +105,7 @@ public class PlayMove : MonoBehaviour
 
         while (Time.time < startTime + dashTime)
         {
-            if(status.getForce() > 100)
-                controller.Move(movement * 1.2f * DashSpeed * Time.deltaTime);
-            else
-                controller.Move(movement * DashSpeed * Time.deltaTime);
+            controller.Move(movement * DashSpeed * Time.deltaTime);
 
             yield return null;
         }

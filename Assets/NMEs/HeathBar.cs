@@ -44,7 +44,6 @@ public class HeathBar : MonoBehaviour
     [Tooltip("this is checked if the healthbar is allways visible, even at full health")]
     public bool isVisbl;
     public bool EndOnDeath;
-    public bool isBoss = false;
 
     [Header("References")]
     [Tooltip("this is a reference to the object that you want to have a healthbar")]
@@ -57,9 +56,6 @@ public class HeathBar : MonoBehaviour
     public Transform FaceT;
     [Tooltip("this is a reference to the empty object that holds the canvas")]
     public Transform HldrT;
-
-    
-    
     
     bool HBoff = true;//the health bar is off untill the object takes damage
 
@@ -116,14 +112,10 @@ public class HeathBar : MonoBehaviour
                 if (EndOnDeath)
                 {
                     Cursor.lockState = CursorLockMode.None;
-                    SceneManager.LoadScene("Lose");
+                    SceneManager.LoadScene("MainMenu");
                 }
                 Destroy(SelfObj);
-                if (isBoss == true)
-                {
-                    Cursor.lockState = CursorLockMode.None;
-                    SceneManager.LoadScene("Win");
-                }
+                
             }
         }
     }

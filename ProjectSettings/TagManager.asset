@@ -8,8 +8,6 @@ TagManager:
   - gunHolder
   - Bullet
   - ObjectF
-  - Collectables
-  - badCollectables
   layers:
   - Default
   - TransparentFX
