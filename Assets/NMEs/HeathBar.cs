@@ -43,7 +43,9 @@ public class HeathBar : MonoBehaviour
     public bool persisBody;
     [Tooltip("this is checked if the healthbar is allways visible, even at full health")]
     public bool isVisbl;
-    public bool EndOnDeath;
+
+    public bool LoseOnDeath;
+    public bool WinOnDeath;
 
     [Header("References")]
     [Tooltip("this is a reference to the object that you want to have a healthbar")]
@@ -63,7 +65,7 @@ public class HeathBar : MonoBehaviour
     {
         CurH = Mathf.Max(Mathf.Min(CurH, MaxH), 0);//this ensures that CurH is betwen 0 and MaxH
         CanObj.SetActive(false);
-        InvokeRepeating("HealthRegen", 0.0f, 0.5f);
+        InvokeRepeating("HealthRegen", 0.0f, 0.25f);
     }
 
     void Update()
@@ -95,10 +97,15 @@ public class HeathBar : MonoBehaviour
         {
             if (persisBody)
             {
-                if (EndOnDeath)
+                if (LoseOnDeath)
                 {
                     Cursor.lockState = CursorLockMode.None;
-                    SceneManager.LoadScene("MainMenu");
+                    SceneManager.LoadScene("Lose");
+                }
+                if (WinOnDeath)
+                {
+                    Cursor.lockState = CursorLockMode.None;
+                    SceneManager.LoadScene("Win");
                 }
                 Destroy(SelfObj.GetComponent<HeathBar>());
                 Destroy(CanObj);
@@ -110,10 +117,15 @@ public class HeathBar : MonoBehaviour
                     Color temp = SelfObj.GetComponent<Renderer>().material.color;
                     temp.a = 1f - i;
                 }//wanted to do a fade out, but that just dosen't work for some reason. maybe come back to this way later.*/
-                if (EndOnDeath)
+                if (LoseOnDeath)
                 {
                     Cursor.lockState = CursorLockMode.None;
-                    SceneManager.LoadScene("MainMenu");
+                    SceneManager.LoadScene("Lose");
+                }
+                if (WinOnDeath)
+                {
+                    Cursor.lockState = CursorLockMode.None;
+                    SceneManager.LoadScene("Win");
                 }
                 Destroy(SelfObj);
                 

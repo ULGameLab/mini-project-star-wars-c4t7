@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ForceTrooper : MonoBehaviour
 {
@@ -53,18 +54,22 @@ public class ForceTrooper : MonoBehaviour
         {
             PushReady = false;
             GetComponent<Rigidbody>().isKinematic = false;
+            GetComponent<NavMeshAgent>().enabled = false;
             GetComponent<Rigidbody>().AddForce(ThePlayer.transform.forward * 6000);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(3f);
             GetComponent<Rigidbody>().isKinematic = true;
+            GetComponent<NavMeshAgent>().enabled = true;
             PushReady = true;
         }
         else
         {
             PushReady = false;
             GetComponent<Rigidbody>().isKinematic = false;
+            GetComponent<NavMeshAgent>().enabled = false;
             GetComponent<Rigidbody>().AddForce(ThePlayer.transform.forward * 3000);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(3f);
             GetComponent<Rigidbody>().isKinematic = true;
+            GetComponent<NavMeshAgent>().enabled = true;
             PushReady = true;
         }
         forceStatus.AddForce(-forceReduction);
@@ -86,18 +91,22 @@ public class ForceTrooper : MonoBehaviour
         {
             PushReady = false;
             GetComponent<Rigidbody>().isKinematic = false;
+            //GetComponent<NavMeshAgent>().enabled = false;
             GetComponent<Rigidbody>().AddForce(ThePlayer.transform.forward * 4000 * -1);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(3f);
             GetComponent<Rigidbody>().isKinematic = true;
+            //GetComponent<NavMeshAgent>().enabled = true;
             PushReady = true;
         }
         else
         {
             PushReady = false;
             GetComponent<Rigidbody>().isKinematic = false;
-            GetComponent<Rigidbody>().AddForce(ThePlayer.transform.forward * 2000 * -1);
-            yield return new WaitForSeconds(1f);
+            GetComponent<NavMeshAgent>().enabled = false;
+            //GetComponent<Rigidbody>().AddForce(ThePlayer.transform.forward * 2000 * -1);
+            yield return new WaitForSeconds(3f);
             GetComponent<Rigidbody>().isKinematic = true;
+            //GetComponent<NavMeshAgent>().enabled = true;
             PushReady = true;
         }
         forceStatus.AddForce(-forceReduction);

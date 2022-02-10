@@ -11,8 +11,9 @@ public class Force : MonoBehaviour
     public ForceLevelStatus forceStatus;
     private int forceReduction = 20;
     public int theForce;
-    
 
+    Vector3 Acc;
+    Vector3 Vel;
 
     void Update()
     {
@@ -26,6 +27,8 @@ public class Force : MonoBehaviour
                 this.transform.position = TheDestination.position;
                 this.transform.parent = GameObject.Find("ForcePoint").transform;
                 forceStatus.AddForce(-forceReduction);
+
+                NowMoveYaDumbCube();
             }
             /*
             if (Input.GetKeyUp(KeyCode.E))// release it
@@ -83,5 +86,15 @@ public class Force : MonoBehaviour
 
 
     }
-    
+    Vector3 seek(Transform goTo, Transform goFrom)
+    {
+        return Vector3.ClampMagnitude(Vector3.ClampMagnitude(goTo.position - goFrom.position, .4f) - Vel, .4f);
+    }
+    void NowMoveYaDumbCube()
+    {
+        Acc = Vector3.zero;
+        Acc = Acc + seek(TheDestination, this.transform);
+        Vel = Vector3.ClampMagnitude(Vel + Acc * Time.fixedDeltaTime, .3f);
+        this.transform.position = this.transform.position + Vel * Time.fixedDeltaTime;
+    }
 }

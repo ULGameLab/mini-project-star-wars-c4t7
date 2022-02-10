@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 220505765cdd1c34f820c5182b4e5c5f, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -3726,7 +3726,8 @@ MonoBehaviour:
   CurH: 25
   persisBody: 0
   isVisbl: 0
-  EndOnDeath: 0
+  LoseOnDeath: 0
+  WinOnDeath: 0
   SelfObj: {fileID: 143883294}
   HBSl: {fileID: 764296594}
   CanObj: {fileID: 1373346369}
@@ -3899,7 +3900,8 @@ MonoBehaviour:
   CurH: 35
   persisBody: 0
   isVisbl: 0
-  EndOnDeath: 0
+  LoseOnDeath: 0
+  WinOnDeath: 0
   SelfObj: {fileID: 150737627}
   HBSl: {fileID: 1312911812}
   CanObj: {fileID: 1071484217}
@@ -4926,7 +4928,8 @@ MonoBehaviour:
   CurH: 25
   persisBody: 0
   isVisbl: 0
-  EndOnDeath: 0
+  LoseOnDeath: 0
+  WinOnDeath: 0
   SelfObj: {fileID: 188967429}
   HBSl: {fileID: 483859461}
   CanObj: {fileID: 1683809486}
@@ -5631,7 +5634,8 @@ MonoBehaviour:
   CurH: 150
   persisBody: 0
   isVisbl: 1
-  EndOnDeath: 1
+  LoseOnDeath: 1
+  WinOnDeath: 0
   SelfObj: {fileID: 211484911}
   HBSl: {fileID: 1202379078}
   CanObj: {fileID: 1470557089}
@@ -6433,7 +6437,8 @@ MonoBehaviour:
   CurH: 25
   persisBody: 0
   isVisbl: 0
-  EndOnDeath: 0
+  LoseOnDeath: 0
+  WinOnDeath: 0
   SelfObj: {fileID: 238231093}
   HBSl: {fileID: 1518495035}
   CanObj: {fileID: 2002458053}
@@ -6944,7 +6949,8 @@ MonoBehaviour:
   CurH: 75
   persisBody: 0
   isVisbl: 1
-  EndOnDeath: 0
+  LoseOnDeath: 0
+  WinOnDeath: 1
   SelfObj: {fileID: 253804849}
   HBSl: {fileID: 11853072}
   CanObj: {fileID: 1027708904}
@@ -8003,7 +8009,8 @@ MonoBehaviour:
   CurH: 25
   persisBody: 0
   isVisbl: 0
-  EndOnDeath: 0
+  LoseOnDeath: 0
+  WinOnDeath: 0
   SelfObj: {fileID: 304755714}
   HBSl: {fileID: 1663230713}
   CanObj: {fileID: 379515657}
@@ -10256,7 +10263,8 @@ MonoBehaviour:
   CurH: 35
   persisBody: 0
   isVisbl: 0
-  EndOnDeath: 0
+  LoseOnDeath: 0
+  WinOnDeath: 0
   SelfObj: {fileID: 415759146}
   HBSl: {fileID: 954200284}
   CanObj: {fileID: 131991277}
@@ -12529,7 +12537,8 @@ MonoBehaviour:
   CurH: 35
   persisBody: 0
   isVisbl: 0
-  EndOnDeath: 0
+  LoseOnDeath: 0
+  WinOnDeath: 0
   SelfObj: {fileID: 514400286}
   HBSl: {fileID: 170420270}
   CanObj: {fileID: 1037358570}
@@ -14218,7 +14227,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh108644
+  m_Name: pb_Mesh231284
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15424,7 +15433,8 @@ MonoBehaviour:
   CurH: 35
   persisBody: 0
   isVisbl: 0
-  EndOnDeath: 0
+  LoseOnDeath: 0
+  WinOnDeath: 0
   SelfObj: {fileID: 666380208}
   HBSl: {fileID: 2088059247}
   CanObj: {fileID: 1298873834}
@@ -18263,7 +18273,8 @@ MonoBehaviour:
   CurH: 35
   persisBody: 0
   isVisbl: 0
-  EndOnDeath: 0
+  LoseOnDeath: 0
+  WinOnDeath: 0
   SelfObj: {fileID: 771573728}
   HBSl: {fileID: 1514341066}
   CanObj: {fileID: 955544739}
@@ -18726,7 +18737,8 @@ MonoBehaviour:
   CurH: 35
   persisBody: 0
   isVisbl: 0
-  EndOnDeath: 0
+  LoseOnDeath: 0
+  WinOnDeath: 0
   SelfObj: {fileID: 792261912}
   HBSl: {fileID: 185172827}
   CanObj: {fileID: 718595635}
@@ -19404,7 +19416,8 @@ MonoBehaviour:
   CurH: 15
   persisBody: 0
   isVisbl: 0
-  EndOnDeath: 0
+  LoseOnDeath: 0
+  WinOnDeath: 0
   SelfObj: {fileID: 821887698}
   HBSl: {fileID: 1025967787}
   CanObj: {fileID: 998076068}
@@ -22321,7 +22334,8 @@ MonoBehaviour:
   CurH: 25
   persisBody: 0
   isVisbl: 0
-  EndOnDeath: 0
+  LoseOnDeath: 0
+  WinOnDeath: 0
   SelfObj: {fileID: 952855523}
   HBSl: {fileID: 1979431841}
   CanObj: {fileID: 540975379}
@@ -22719,7 +22733,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh106390
+  m_Name: pb_Mesh229030
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -23291,7 +23305,8 @@ MonoBehaviour:
   CurH: 20
   persisBody: 0
   isVisbl: 0
-  EndOnDeath: 0
+  LoseOnDeath: 0
+  WinOnDeath: 0
   SelfObj: {fileID: 983465741}
   HBSl: {fileID: 2085722676}
   CanObj: {fileID: 1171598653}
@@ -25026,7 +25041,8 @@ MonoBehaviour:
   CurH: 25
   persisBody: 0
   isVisbl: 0
-  EndOnDeath: 0
+  LoseOnDeath: 0
+  WinOnDeath: 0
   SelfObj: {fileID: 1073042321}
   HBSl: {fileID: 1713529107}
   CanObj: {fileID: 1609397787}
@@ -25684,7 +25700,8 @@ MonoBehaviour:
   CurH: 25
   persisBody: 0
   isVisbl: 0
-  EndOnDeath: 0
+  LoseOnDeath: 0
+  WinOnDeath: 0
   SelfObj: {fileID: 1085114829}
   HBSl: {fileID: 2075338554}
   CanObj: {fileID: 1235147826}
@@ -26197,7 +26214,8 @@ MonoBehaviour:
   CurH: 20
   persisBody: 0
   isVisbl: 0
-  EndOnDeath: 0
+  LoseOnDeath: 0
+  WinOnDeath: 0
   SelfObj: {fileID: 1120672252}
   HBSl: {fileID: 549921477}
   CanObj: {fileID: 416630057}
@@ -29080,7 +29098,8 @@ MonoBehaviour:
   CurH: 25
   persisBody: 0
   isVisbl: 0
-  EndOnDeath: 0
+  LoseOnDeath: 0
+  WinOnDeath: 0
   SelfObj: {fileID: 1232613989}
   HBSl: {fileID: 43569766}
   CanObj: {fileID: 675381563}
@@ -29734,7 +29753,8 @@ MonoBehaviour:
   CurH: 20
   persisBody: 0
   isVisbl: 0
-  EndOnDeath: 0
+  LoseOnDeath: 0
+  WinOnDeath: 0
   SelfObj: {fileID: 1248456884}
   HBSl: {fileID: 101827059}
   CanObj: {fileID: 364884871}
@@ -35410,7 +35430,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh108406
+  m_Name: pb_Mesh231046
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -37173,7 +37193,8 @@ MonoBehaviour:
   CurH: 25
   persisBody: 0
   isVisbl: 0
-  EndOnDeath: 0
+  LoseOnDeath: 0
+  WinOnDeath: 0
   SelfObj: {fileID: 1514202069}
   HBSl: {fileID: 1737852415}
   CanObj: {fileID: 1256284269}
@@ -39382,7 +39403,8 @@ MonoBehaviour:
   CurH: 25
   persisBody: 0
   isVisbl: 0
-  EndOnDeath: 0
+  LoseOnDeath: 0
+  WinOnDeath: 0
   SelfObj: {fileID: 1587260391}
   HBSl: {fileID: 1212289168}
   CanObj: {fileID: 1342428113}
@@ -40941,7 +40963,8 @@ MonoBehaviour:
   CurH: 25
   persisBody: 0
   isVisbl: 0
-  EndOnDeath: 0
+  LoseOnDeath: 0
+  WinOnDeath: 0
   SelfObj: {fileID: 1676551323}
   HBSl: {fileID: 697319760}
   CanObj: {fileID: 1370672215}
@@ -50066,7 +50089,8 @@ MonoBehaviour:
   CurH: 25
   persisBody: 0
   isVisbl: 0
-  EndOnDeath: 0
+  LoseOnDeath: 0
+  WinOnDeath: 0
   SelfObj: {fileID: 2111299234}
   HBSl: {fileID: 1227384043}
   CanObj: {fileID: 235088489}
@@ -51009,7 +51033,8 @@ MonoBehaviour:
   CurH: 25
   persisBody: 0
   isVisbl: 0
-  EndOnDeath: 0
+  LoseOnDeath: 0
+  WinOnDeath: 0
   SelfObj: {fileID: 2135419902}
   HBSl: {fileID: 1572475738}
   CanObj: {fileID: 55926763}

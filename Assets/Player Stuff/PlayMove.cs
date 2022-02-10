@@ -62,6 +62,7 @@ public class PlayMove : MonoBehaviour
             }
         } */
         //Crouch:
+        /*
         if (Input.GetKeyDown(KeyCode.C)) {
             speed = Ospeed*0.375f;
             body.localScale = new Vector3(1f,.50f,1f);
@@ -72,6 +73,7 @@ public class PlayMove : MonoBehaviour
             isCrouched = false; 
             controller.Move(Vector3.up * .2f);
         }
+        */
 
         //Dash
         if (DashReady && Input.GetKey(KeyCode.LeftShift) && status.getForce() >= forceReduction)
