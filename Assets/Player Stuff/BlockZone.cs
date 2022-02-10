@@ -9,6 +9,8 @@ public class BlockZone : MonoBehaviour
     public float ReflectMagnifier;
     public float Force;
 
+    public ForceLevelStatus theStatus1;
+    private int forceReduction = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,9 +25,11 @@ public class BlockZone : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Bullet")
+        if (other.gameObject.tag == "Bullet" && theStatus1.getForce() >= forceReduction)
         {
             other.attachedRigidbody.velocity = Vector3.Reflect(other.attachedRigidbody.velocity, UserCamera.transform.forward) * ReflectMagnifier;
+            Debug.Log("1");
+            theStatus1.AddForce(-forceReduction);
         }
         
     }
