@@ -28,7 +28,8 @@ public class Force : MonoBehaviour
                 this.transform.parent = GameObject.Find("ForcePoint").transform;
                 forceStatus.AddForce(-forceReduction);
 
-                NowMoveYaDumbCube();
+                //InvokeRepeating("Reposition1", 0.0f, 0.1f);
+                //StartCoroutine(Reposition());
             }
             /*
             if (Input.GetKeyUp(KeyCode.E))// release it
@@ -78,23 +79,41 @@ public class Force : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.E))// release it
         {
+            //CancelInvoke("Reposition1");
             GetComponent<Rigidbody>().useGravity = true;
             GetComponent<Rigidbody>().detectCollisions = true;
             this.transform.parent = null;
             //GetComponent<Rigidbody>().useGravity = true;
         }
-
+        /*
+        if (Input.GetKey(KeyCode.E))
+        {
+            this.transform.position = TheDestination.position;
+        }
+        */
 
     }
     Vector3 seek(Transform goTo, Transform goFrom)
     {
-        return Vector3.ClampMagnitude(Vector3.ClampMagnitude(goTo.position - goFrom.position, .4f) - Vel, .4f);
+        return Vector3.ClampMagnitude(Vector3.ClampMagnitude(goTo.position - goFrom.position, 10f) - Vel, 1000f);
     }
     void NowMoveYaDumbCube()
     {
         Acc = Vector3.zero;
         Acc = Acc + seek(TheDestination, this.transform);
-        Vel = Vector3.ClampMagnitude(Vel + Acc * Time.fixedDeltaTime, .3f);
+        Vel = Vector3.ClampMagnitude(Vel + Acc * Time.fixedDeltaTime, 1000f);
         this.transform.position = this.transform.position + Vel * Time.fixedDeltaTime;
+    }
+    public void Reposition1()
+    {
+        while (this.transform.position != TheDestination.position)
+        {
+            this.transform.position = TheDestination.position;
+        }
+    }
+    IEnumerator Reposition()
+    {
+        this.transform.position = TheDestination.position;
+        yield return null;
     }
 }

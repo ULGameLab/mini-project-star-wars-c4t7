@@ -54,22 +54,22 @@ public class ForceTrooper : MonoBehaviour
         {
             PushReady = false;
             GetComponent<Rigidbody>().isKinematic = false;
-            GetComponent<NavMeshAgent>().enabled = false;
+            //GetComponent<NavMeshAgent>().enabled = false;
             GetComponent<Rigidbody>().AddForce(ThePlayer.transform.forward * 6000);
             yield return new WaitForSeconds(3f);
             GetComponent<Rigidbody>().isKinematic = true;
-            GetComponent<NavMeshAgent>().enabled = true;
+            //GetComponent<NavMeshAgent>().enabled = true;
             PushReady = true;
         }
         else
         {
             PushReady = false;
             GetComponent<Rigidbody>().isKinematic = false;
-            GetComponent<NavMeshAgent>().enabled = false;
+            //GetComponent<NavMeshAgent>().enabled = false;
             GetComponent<Rigidbody>().AddForce(ThePlayer.transform.forward * 3000);
             yield return new WaitForSeconds(3f);
             GetComponent<Rigidbody>().isKinematic = true;
-            GetComponent<NavMeshAgent>().enabled = true;
+            //GetComponent<NavMeshAgent>().enabled = true;
             PushReady = true;
         }
         forceStatus.AddForce(-forceReduction);
@@ -102,7 +102,7 @@ public class ForceTrooper : MonoBehaviour
         {
             PushReady = false;
             GetComponent<Rigidbody>().isKinematic = false;
-            GetComponent<NavMeshAgent>().enabled = false;
+            //GetComponent<NavMeshAgent>().enabled = false;
             //GetComponent<Rigidbody>().AddForce(ThePlayer.transform.forward * 2000 * -1);
             yield return new WaitForSeconds(3f);
             GetComponent<Rigidbody>().isKinematic = true;
