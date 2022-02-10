@@ -63,6 +63,7 @@ public class HeathBar : MonoBehaviour
     {
         CurH = Mathf.Max(Mathf.Min(CurH, MaxH), 0);//this ensures that CurH is betwen 0 and MaxH
         CanObj.SetActive(false);
+        InvokeRepeating("HealthRegen", 0.0f, 0.5f);
     }
 
     void Update()
@@ -118,5 +119,10 @@ public class HeathBar : MonoBehaviour
                 
             }
         }
+    }
+
+    public void HealthRegen()
+    {
+        TakeDamage(-1);
     }
 }

@@ -27,30 +27,61 @@ public class Force : MonoBehaviour
                 this.transform.parent = GameObject.Find("ForcePoint").transform;
                 forceStatus.AddForce(-forceReduction);
             }
+            /*
             if (Input.GetKeyUp(KeyCode.E))// release it
             {
-                this.transform.parent = null;
                 GetComponent<Rigidbody>().useGravity = true;
+                this.transform.parent = null;
+                //GetComponent<Rigidbody>().useGravity = true;
             }
+            */
             if (Input.GetKeyDown(KeyCode.F) && theForce >= forceReduction)// if push it
             {
                 if (theForce > 100)
-                    GetComponent<Rigidbody>().AddForce(ThePlayer.transform.forward * 1400);
+                {
+                    GetComponent<Rigidbody>().AddForce(ThePlayer.transform.forward * 2800); //1400
+                    GetComponent<Rigidbody>().useGravity = true;
+                    GetComponent<Rigidbody>().detectCollisions = true;
+                    this.transform.parent = null;
+                }
                 else
-                    GetComponent<Rigidbody>().AddForce(ThePlayer.transform.forward * 700);
+                {
+                    GetComponent<Rigidbody>().AddForce(ThePlayer.transform.forward * 1400); //700
+                    GetComponent<Rigidbody>().useGravity = true;
+                    GetComponent<Rigidbody>().detectCollisions = true;
+                    this.transform.parent = null;
+                }
                 forceStatus.AddForce(-forceReduction);
             }
             if (Input.GetKeyDown(KeyCode.R) && theForce >= forceReduction)// if pull it
             {
                 if (theForce > 100)
-                    GetComponent<Rigidbody>().AddForce(ThePlayer.transform.forward * 1400 * -1);
+                {
+                    GetComponent<Rigidbody>().AddForce(ThePlayer.transform.forward * 2800 * -1);
+                    GetComponent<Rigidbody>().useGravity = true;
+                    GetComponent<Rigidbody>().detectCollisions = true;
+                    this.transform.parent = null;
+                }
                 else
-                    GetComponent<Rigidbody>().AddForce(ThePlayer.transform.forward * 700 * -1);
+                {
+                    GetComponent<Rigidbody>().AddForce(ThePlayer.transform.forward * 1400 * -1);
+                    GetComponent<Rigidbody>().useGravity = true;
+                    GetComponent<Rigidbody>().detectCollisions = true;
+                    this.transform.parent = null;
+                }
                 forceStatus.AddForce(-forceReduction);
             }
 
         }
-        
+        if (Input.GetKeyUp(KeyCode.E))// release it
+        {
+            GetComponent<Rigidbody>().useGravity = true;
+            GetComponent<Rigidbody>().detectCollisions = true;
+            this.transform.parent = null;
+            //GetComponent<Rigidbody>().useGravity = true;
+        }
+
+
     }
     
 }
