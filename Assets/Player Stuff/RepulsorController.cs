@@ -9,6 +9,9 @@ public class RepulsorController : MonoBehaviour
     public float ReflectMagnifier;
     public float Force;
 
+    public ForceLevelStatus theStatus;
+    private int forceReduction = 20;
+
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +30,9 @@ public class RepulsorController : MonoBehaviour
     {
         if (other.gameObject.tag == "Bullet")
         {
+            
             other.attachedRigidbody.velocity = Vector3.Reflect(other.attachedRigidbody.velocity, UserCamera.transform.forward) * ReflectMagnifier;
+            
         }
         else
         {

@@ -61,12 +61,12 @@ public class PlayInput : MonoBehaviour {
         if (Physics.Raycast(UserCamera.position, UserCamera.forward, out hit, Mathf.Infinity, layerMask))
         {
             Debug.DrawRay(transform.position, UserCamera.forward * hit.distance, Color.red);
-            Debug.Log("Did hit");
+            
         }
         else
         {
             Debug.DrawRay(transform.position, UserCamera.forward * 1000, Color.blue);
-            Debug.Log("Did not hit");
+            
         }
 
     }
