@@ -5,7 +5,8 @@ using UnityEngine;
 public class BlockZone : MonoBehaviour
 {
     [SerializeField] private Transform UserCamera;
-
+    public AudioSource sounds;
+    public AudioClip block;
     public float ReflectMagnifier;
     public float Force;
 
@@ -28,7 +29,7 @@ public class BlockZone : MonoBehaviour
         if (other.gameObject.tag == "Bullet" && theStatus1.getForce() >= forceReduction)
         {
             other.attachedRigidbody.velocity = Vector3.Reflect(other.attachedRigidbody.velocity, UserCamera.transform.forward) * ReflectMagnifier;
-            Debug.Log("1");
+            sounds.PlayOneShot(block);
             theStatus1.AddForce(-forceReduction);
         }
         

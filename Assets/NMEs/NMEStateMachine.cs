@@ -41,7 +41,8 @@ public class NMEStateMachine : MonoBehaviour
     public float VisRng;
     [Tooltip("distance to see luke, probably 25")]
     public float VisDist;
-
+    public AudioSource sounds;
+    public AudioClip pew;
     bool KillOnce;
     Vector3 KPos;
     public Transform GunTipT;
@@ -193,6 +194,7 @@ public class NMEStateMachine : MonoBehaviour
     }
     void Fire()
     {
+        sounds.PlayOneShot(pew);
         Fired = Instantiate(SelectedPre);
         Fired.transform.position = GunTipT.position;
         Fired.transform.rotation = GunTipT.rotation;
