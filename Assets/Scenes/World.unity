@@ -106,18 +106,18 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
-    agentHeight: 2
-    agentSlope: 45
-    agentClimb: 0.4
+    agentRadius: 0.1
+    agentHeight: 0.5
+    agentSlope: 60
+    agentClimb: 0.2
     ledgeDropHeight: 15
     maxJumpAcrossDistance: 20
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.033333335
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    accuratePlacement: 1
     maxJobWorkers: 0
     preserveTilesOutsideBounds: 0
     debug:
@@ -2131,6 +2131,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 211484912}
   forceStatus: {fileID: 211484914}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!64 &79991381
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3706,6 +3709,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 0}
   forceStatus: {fileID: 0}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!114 &143883296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3880,6 +3886,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 0}
   forceStatus: {fileID: 0}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!114 &150737629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4424,15 +4433,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a1639f5829092bb419de340548b1ba9a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -72.08
+      value: 85.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a1639f5829092bb419de340548b1ba9a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.63
+      value: 6.84
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a1639f5829092bb419de340548b1ba9a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -58.69
+      value: 43.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a1639f5829092bb419de340548b1ba9a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4461,6 +4470,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a1639f5829092bb419de340548b1ba9a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: a1639f5829092bb419de340548b1ba9a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a1639f5829092bb419de340548b1ba9a, type: 3}
       propertyPath: m_Name
@@ -4519,6 +4532,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 211484912}
   forceStatus: {fileID: 211484914}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!4 &175948966 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a1639f5829092bb419de340548b1ba9a, type: 3}
@@ -4552,6 +4568,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b85577a7cbefccd4ca14032ae8dbf213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &175948973
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175948962}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.050641987, y: 0.039662164, z: 0.014516199}
+  m_Center: {x: -0.0004252959, y: -0.00020119116, z: 0.0047973194}
 --- !u!1 &185172825
 GameObject:
   m_ObjectHideFlags: 0
@@ -4920,6 +4949,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 0}
   forceStatus: {fileID: 0}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!114 &188967431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5603,6 +5635,10 @@ PrefabInstance:
       propertyPath: UserCamera
       value: 
       objectReference: {fileID: 211484913}
+    - target: {fileID: 4742659712398629028, guid: fea5f67e76e2c2d4a821214292c30bd2, type: 3}
+      propertyPath: TheDestination
+      value: 
+      objectReference: {fileID: 1473667049}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fea5f67e76e2c2d4a821214292c30bd2, type: 3}
 --- !u!1 &211484911 stripped
@@ -6125,6 +6161,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 211484912}
   forceStatus: {fileID: 211484914}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!64 &223302709
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6441,6 +6480,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 0}
   forceStatus: {fileID: 0}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!114 &238231095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6969,6 +7011,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 0}
   forceStatus: {fileID: 0}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!114 &253804851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7276,6 +7321,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 211484912}
   forceStatus: {fileID: 211484914}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!4 &254804470 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f44ead66f0109d044ae859ae08ffbf68, type: 3}
@@ -8025,6 +8073,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 0}
   forceStatus: {fileID: 0}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!114 &304755716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8487,6 +8538,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 211484912}
   forceStatus: {fileID: 211484914}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!64 &330173973
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10291,6 +10345,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 0}
   forceStatus: {fileID: 0}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!114 &415759148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12565,6 +12622,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 0}
   forceStatus: {fileID: 0}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!114 &514400288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13009,6 +13069,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 211484912}
   forceStatus: {fileID: 211484914}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!64 &519624310
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14299,7 +14362,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh231284
+  m_Name: pb_Mesh26986
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15473,6 +15536,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 0}
   forceStatus: {fileID: 0}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!114 &666380210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15813,6 +15879,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 211484912}
   forceStatus: {fileID: 211484914}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!4 &671447663 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0f53a313659848744839fbf58416d4a4, type: 3}
@@ -18325,6 +18394,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 0}
   forceStatus: {fileID: 0}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!114 &771573730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18789,6 +18861,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 0}
   forceStatus: {fileID: 0}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!114 &792261914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19283,6 +19358,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 211484912}
   forceStatus: {fileID: 211484914}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!64 &809131799
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -19480,6 +19558,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 0}
   forceStatus: {fileID: 0}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!114 &821887700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21043,6 +21124,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 211484912}
   forceStatus: {fileID: 211484914}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!64 &888842519
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -21435,6 +21519,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 211484912}
   forceStatus: {fileID: 211484914}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!64 &918112965
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -22422,6 +22509,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 0}
   forceStatus: {fileID: 0}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!114 &952855525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22853,7 +22943,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh229030
+  m_Name: pb_Mesh24706
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -23393,6 +23483,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 0}
   forceStatus: {fileID: 0}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!114 &983465743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23826,6 +23919,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 211484912}
   forceStatus: {fileID: 211484914}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!64 &997472864
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -25141,6 +25237,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 0}
   forceStatus: {fileID: 0}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!114 &1073042323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25800,6 +25899,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 0}
   forceStatus: {fileID: 0}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!114 &1085114831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26314,6 +26416,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 0}
   forceStatus: {fileID: 0}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!114 &1120672254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26733,6 +26838,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 211484912}
   forceStatus: {fileID: 211484914}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!64 &1138984302
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -27477,7 +27585,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ebcc81aebddcf8a4089492f2f49ae728, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -151.68
+      value: -144.82
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ebcc81aebddcf8a4089492f2f49ae728, type: 3}
       propertyPath: m_LocalRotation.w
@@ -27564,6 +27672,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 211484912}
   forceStatus: {fileID: 211484914}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!4 &1165817077 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ebcc81aebddcf8a4089492f2f49ae728, type: 3}
@@ -28059,7 +28170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad1236edc92372d43b273972a3ff3788, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -147.9
+      value: -137.57
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad1236edc92372d43b273972a3ff3788, type: 3}
       propertyPath: m_LocalRotation.w
@@ -28146,6 +28257,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 211484912}
   forceStatus: {fileID: 211484914}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!4 &1192727576 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ad1236edc92372d43b273972a3ff3788, type: 3}
@@ -29234,6 +29348,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 0}
   forceStatus: {fileID: 0}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!114 &1232613991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29889,6 +30006,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 0}
   forceStatus: {fileID: 0}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!114 &1248456886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30567,6 +30687,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 211484912}
   forceStatus: {fileID: 211484914}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!64 &1285553270
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -33049,6 +33172,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 211484912}
   forceStatus: {fileID: 211484914}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!64 &1374277129
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -35622,7 +35748,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh231046
+  m_Name: pb_Mesh26744
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -35789,6 +35915,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1473667049}
+  - component: {fileID: 1473667050}
   m_Layer: 0
   m_Name: ForcePoint
   m_TagString: Untagged
@@ -35812,6 +35939,22 @@ Transform:
   m_Father: {fileID: 211484913}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1473667050
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473667048}
+  serializedVersion: 2
+  m_Mass: 5
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1473694840
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36173,6 +36316,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 211484912}
   forceStatus: {fileID: 211484914}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!64 &1489595824
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -37365,6 +37511,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 0}
   forceStatus: {fileID: 0}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!114 &1514202071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39575,6 +39724,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 0}
   forceStatus: {fileID: 0}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!114 &1587260393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41152,6 +41304,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 0}
   forceStatus: {fileID: 0}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!114 &1676551325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41497,6 +41652,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 211484912}
   forceStatus: {fileID: 211484914}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!64 &1681635553
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -44414,6 +44572,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 211484912}
   forceStatus: {fileID: 211484914}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!64 &1827250597
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -45849,6 +46010,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 211484912}
   forceStatus: {fileID: 211484914}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!64 &1873628342
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -45933,10 +46097,10 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878125582}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 10
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1878125585
 MeshRenderer:
@@ -46395,6 +46559,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 211484912}
   forceStatus: {fileID: 211484914}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!64 &1890354453
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -48408,6 +48575,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 211484912}
   forceStatus: {fileID: 211484914}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!64 &2008735879
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -48654,6 +48824,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 211484912}
   forceStatus: {fileID: 211484914}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!64 &2027366597
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -49186,6 +49359,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 211484912}
   forceStatus: {fileID: 211484914}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!64 &2067648598
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -50362,6 +50538,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 0}
   forceStatus: {fileID: 0}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!114 &2111299236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51306,6 +51485,9 @@ MonoBehaviour:
   ThePlayer: {fileID: 0}
   forceStatus: {fileID: 0}
   theForce: 0
+  temp: {fileID: 0}
+  GforceV: {x: 0, y: 0, z: 0}
+  GforveM: 0
 --- !u!114 &2135419904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51508,6 +51690,7 @@ GameObject:
   m_Component:
   - component: {fileID: 543450653037185890}
   - component: {fileID: 135856918}
+  - component: {fileID: 919132148777882073}
   m_Layer: 3
   m_Name: caveSystem
   m_TagString: Untagged
@@ -51515,6 +51698,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!54 &919132148777882073
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148777882072}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &956907397208918821
 GameObject:
   m_ObjectHideFlags: 0
@@ -51527,6 +51726,7 @@ GameObject:
   - component: {fileID: 3923950060398922605}
   - component: {fileID: 6242178253109915594}
   - component: {fileID: 696331414}
+  - component: {fileID: 6242178253109915595}
   m_Layer: 3
   m_Name: enterance
   m_TagString: Untagged
@@ -51588,6 +51788,7 @@ GameObject:
   - component: {fileID: 3946427350445214907}
   - component: {fileID: 7474744977599458082}
   - component: {fileID: 696331410}
+  - component: {fileID: 7474744977599458083}
   m_Layer: 3
   m_Name: tunnela/room1
   m_TagString: Untagged
@@ -51664,6 +51865,7 @@ GameObject:
   - component: {fileID: 298993843366498871}
   - component: {fileID: 3811973312699460752}
   - component: {fileID: 696331413}
+  - component: {fileID: 3811973312699460753}
   m_Layer: 3
   m_Name: room2
   m_TagString: Untagged
@@ -51846,6 +52048,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &3811973312699460753
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926981340410144498}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!33 &3923950060398922605
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -51874,6 +52092,7 @@ GameObject:
   - component: {fileID: 7797450399026392296}
   - component: {fileID: 1440316100996060404}
   - component: {fileID: 696331412}
+  - component: {fileID: 7797450399026392297}
   m_Layer: 3
   m_Name: tunnel2
   m_TagString: Untagged
@@ -51908,6 +52127,7 @@ GameObject:
   - component: {fileID: 3718926269398840027}
   - component: {fileID: 2310224398524827164}
   - component: {fileID: 5978128815414014652}
+  - component: {fileID: 5978128815414014653}
   m_Layer: 3
   m_Name: BossRoom
   m_TagString: Untagged
@@ -51929,6 +52149,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7445308795018202854, guid: 66df7aef736d0ed4294c507addd13079, type: 3}
+--- !u!54 &5978128815414014653
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5978128815414014651}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!23 &6202129567638888377
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -52013,6 +52249,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &6242178253109915595
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956907397208918821}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7092151373508153546
 GameObject:
   m_ObjectHideFlags: 0
@@ -52025,6 +52277,7 @@ GameObject:
   - component: {fileID: 8341776839087109516}
   - component: {fileID: 1831313049271695950}
   - component: {fileID: 696331411}
+  - component: {fileID: 8341776839087109517}
   m_Layer: 3
   m_Name: tunnel3
   m_TagString: Untagged
@@ -52044,6 +52297,7 @@ GameObject:
   - component: {fileID: 2942161106433134829}
   - component: {fileID: 6202129567638888377}
   - component: {fileID: 777138500}
+  - component: {fileID: 7113671887428774262}
   m_Layer: 3
   m_Name: vally
   m_TagString: Untagged
@@ -52051,6 +52305,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
   m_IsActive: 1
+--- !u!54 &7113671887428774262
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7113671887428774261}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!23 &7474744977599458082
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -52093,6 +52363,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &7474744977599458083
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542749742490815359}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!33 &7797450399026392296
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -52101,6 +52387,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5417763643307615034}
   m_Mesh: {fileID: -5974642561702387684, guid: 66df7aef736d0ed4294c507addd13079, type: 3}
+--- !u!54 &7797450399026392297
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5417763643307615034}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!33 &8341776839087109516
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -52109,3 +52411,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7092151373508153546}
   m_Mesh: {fileID: -5193938375027101202, guid: 66df7aef736d0ed4294c507addd13079, type: 3}
+--- !u!54 &8341776839087109517
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7092151373508153546}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

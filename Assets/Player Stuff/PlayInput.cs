@@ -8,6 +8,7 @@ public class PlayInput : MonoBehaviour {
     float xRotation = 0f;
     public Transform playerBody;
     [SerializeField] private Transform UserCamera;
+    public Transform TheDestination;
 
     // Repulsor
     public GameObject Cone;
@@ -29,13 +30,14 @@ public class PlayInput : MonoBehaviour {
     void Update(){
         float mouseX = Input.GetAxis("Mouse X") * mSens * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mSens * Time.deltaTime;
+       // Debug.Log("y: "+ TheDestination.position.y);
+       // if (TheDestination.position.y >= 6) {
+            xRotation -= mouseY;
+            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation,-90f,90f);
-
-        transform.localRotation = Quaternion.Euler(xRotation,0f,0f);
-        playerBody.Rotate(Vector3.up * mouseX);
-
+            transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+            playerBody.Rotate(Vector3.up * mouseX);
+        //}
         // Repulsor
         // if (RepulseTimer >= 1 && Input.GetButtonDown("Fire2"))
         /*
